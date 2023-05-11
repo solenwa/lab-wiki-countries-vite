@@ -7,7 +7,7 @@ import CountryDetails from "./components/CountryDetails";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const [countriesList, setCountriesList] = useState(countries);
+  const [countriesList] = useState(countries);
   return (
     <div className="App">
       <Navbar />

@@ -8,6 +8,13 @@ function CountryDetails({ countriesList }) {
     return oneCountry.alpha3Code === countryId;
   });
 
+  function findCountry(code3char) {
+    const newCountry = countriesList.find((oneCountry) => {
+      return oneCountry.alpha3Code === code3char;
+    });
+    return newCountry;
+  }
+
   return (
     <div className="col-7">
       <h1>{foundCountry.name.official}</h1>
@@ -31,7 +38,9 @@ function CountryDetails({ countriesList }) {
               <ul>
                 {foundCountry.borders.map((element) => (
                   <li>
-                    <Link to={`/${element}`}>{element}</Link>
+                    <Link to={`/${element}`}>
+                      {findCountry(element).name.official}
+                    </Link>
                   </li>
                 ))}
               </ul>
