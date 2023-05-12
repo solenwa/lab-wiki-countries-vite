@@ -7,6 +7,7 @@ function CountriesList({ countriesList }) {
       <div className="list-group">
         {countriesList.map((country) => (
           <Link
+            key={country.name.common}
             className="list-group-item list-group-item-action"
             to={`/${country.alpha3Code}`}
           >
@@ -15,7 +16,7 @@ function CountriesList({ countriesList }) {
               alt="Country's flag"
               style={{ height: "15px" }}
             ></img>
-            {country.name.official}
+            {country.name.common}
           </Link>
         ))}
       </div>
